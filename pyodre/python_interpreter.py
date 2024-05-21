@@ -1,6 +1,6 @@
-from interpreters import Interpreter
-import python_functions
-from python_functions import *
+from pyodre.interpreters import Interpreter
+import pyodre.python_functions
+from pyodre.python_functions import *
 from rdflib.term import Literal
 
 
@@ -57,6 +57,6 @@ class PythonInterpreter(Interpreter):
 
     def supports(self, action):
         interpretable_action = self.__interpreted_function_mappings(action)
-        if hasattr(python_functions, interpretable_action):
+        if hasattr(pyodre.python_functions, interpretable_action):
             return interpretable_action+"()"
         return None

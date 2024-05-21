@@ -1,7 +1,9 @@
-from rdflib import Graph, plugin
-from python_interpreter import PythonInterpreter
-from interpreters import Interpreter
+from rdflib import Graph
+from pyodre.python_interpreter import PythonInterpreter
+from pyodre.interpreters import Interpreter
 from jinja2 import Template
+
+
 
 class ODRE:
     def __init__(self, debug=False):
@@ -32,7 +34,6 @@ class ODRE:
         }"""
         return [str(row.rule_id.n3()) for row in graph.query(rules_query)]
 
-
     def _constraints(self, rule_id, graph):
         rules_query = """
             SELECT DISTINCT ?operator ?left_operand ?right_operand WHERE {
@@ -42,7 +43,6 @@ class ODRE:
     
             }"""
         return [(str(row.operator), row.left_operand, row.right_operand) for row in graph.query(rules_query)]
-
 
     def _action(self, rule_id, graph):
         rules_query = """
@@ -104,8 +104,10 @@ policy = """
 }
 """
 
+
 def get_token():
     return "AAA"
 
-usage_decision = ODRE().set_debug(True).enforce(policy, interpolations={'token' : 'AAA', 'retrieve_token' : get_token})
+
+usage_decision = ODRE().set_debug(True).enforce(policy, interpolations={'token': 'AAA', 'retrieve_token': get_token})
 print(usage_decision)
