@@ -1,8 +1,17 @@
 # ODRE Framework
 
+## Install
+
+```bash
+pip install pyodre
+```
+
+
 ## Quickstart
 To enforce an ODRL policy using the Python Interpreter
 ```python
+from pyodre.odre import ODRE
+
 policy = """
 {
     "@context": "http://www.w3.org/ns/odrl.jsonld",
