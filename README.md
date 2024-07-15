@@ -1,8 +1,21 @@
 # ODRE Framework
 
+
+
+
 ## Quickstart
-To enforce an ODRL policy using the Python Interpreter
+
+#### Install
+
+```bash
+pip install pyodre
+```
+
+#### Enforce ODRL policies
+
 ```python
+from pyodre.odre import ODRE
+
 policy = """
 {
     "@context": "http://www.w3.org/ns/odrl.jsonld",
@@ -31,6 +44,9 @@ In the case a user wants to activate the DEBUG mode that shows the interpretable
 usage_decision = ODRE().set_debug(True).set_interpreter(PythonInterpreter()).enforce(policy)
 print(usage_decision)
 ```
+
+#### Register new functions (descriptive + interpretable)
+TBD
 
 ### Interpolation
 
