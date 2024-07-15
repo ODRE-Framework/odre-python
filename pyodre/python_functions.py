@@ -6,7 +6,7 @@ def cast_date(node):
     return datetime.strptime(node, "%Y-%m-%d")
 
 def cast_time(node):
-    return datetime.strptime(node, "%H-%M-%S")
+    return datetime.strptime(node, "%H:%M:%S")
 
 def cast_datetime(node):
     return datetime.strptime(node, "%Y-%m-%dT%H-%M-%S")
@@ -58,10 +58,10 @@ def odrl_distribute():
 
 # Time extension
 
-def time():
-    return datetime.now().strftime('%H:%M:%S')
+def time_time():
+    return cast_time(datetime.now().strftime('%H:%M:%S'))
 
-def date():
+def time_date():
     return datetime.now().strftime('%Y-%m-%d')
 
 
