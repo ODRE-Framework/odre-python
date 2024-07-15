@@ -62,6 +62,6 @@ def time_time():
     return cast_time(datetime.now().strftime('%H:%M:%S'))
 
 def time_date():
-    return datetime.now().strftime('%Y-%m-%d')
+    return cast_date(datetime.now().strftime('%Y-%m-%d'))
 
 
