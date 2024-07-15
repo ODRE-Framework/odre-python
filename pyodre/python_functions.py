@@ -6,10 +6,10 @@ def cast_date(node):
     return datetime.strptime(node, "%Y-%m-%d")
 
 def cast_time(node):
-    return datetime.strptime(node, "%Y-%m-%d")
+    return datetime.strptime(node, "%H-%M-%S")
 
 def cast_datetime(node):
-    return datetime.strptime(node, "%Y-%m-%d")
+    return datetime.strptime(node, "%Y-%m-%dT%H-%M-%S")
 
 def cast_string(node):
     return str(node)
@@ -48,5 +48,20 @@ def odrl_neq(operand1, operand2):
 def odrl_dateTime():
     return datetime.now()
 
+
+# Actions
+
 def odrl_distribute():
     print("on distribution")
+    return "distribution action was executed"
+
+
+# Time extension
+
+def time():
+    return datetime.now().strftime('%H:%M:%S')
+
+def date():
+    return datetime.now().strftime('%Y-%m-%d')
+
+

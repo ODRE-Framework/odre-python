@@ -7,3 +7,6 @@ dist/
 pyodre.egg-info/
 __pycache__/*
 .venv/*
+
+# ignore tests
+.coverage

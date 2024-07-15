@@ -53,7 +53,8 @@ class ODRE:
 
     def enforce(self, policy, format='json-ld', interpolations={}):
         templated_policy = Template(policy)
-        print(interpolations)
+        if self.__debug:
+            print(interpolations)
         for templated_name, value in interpolations.items():
             templated_policy.globals[templated_name] = value
         interpolated_policy = templated_policy.render()
@@ -71,43 +72,12 @@ class ODRE:
             if decision:
                 descriptive_action = self._action(rule_id, descriptive_policy)
                 interpretable_action = self.__interpreter.supports(descriptive_action)
+                action_result = interpretable_action
                 if self.__debug:
                     print("Action: ", descriptive_action, " supported: ", interpretable_action)
                 if interpretable_action:
-                    self.__interpreter.evaluate(interpretable_action)
-                usage_decision[descriptive_action] = decision
+                    action_result = self.__interpreter.evaluate(interpretable_action)
+                usage_decision[descriptive_action] = action_result
         if self.__debug:
             print("Usage decisions: ", usage_decision)
         return usage_decision
-
-
-policy = """
-{
-    "@context": "http://www.w3.org/ns/odrl.jsonld",
-    "@type": "Offer",
-    "uid": "http://example.com/policy:6163",
-    "profile": "http://example.com/odrl:profile:10",
-    "permission": [{
-       "target": "http://example.com/document:1234",
-       "assigner": "http://example.com/org:616",
-       "action": "distribute",
-       "constraint": [{
-           "leftOperand": "dateTime",
-           "operator": "lt",
-           "rightOperand":  { "@value": "2025-01-01", "@type": "xsd:date" }
-       },{
-           "leftOperand": { "@value": "{{retrieve_token()}}" , "@type": "xsd:string" },
-           "operator": "eq",
-           "rightOperand":  { "@value": "{{token}}", "@type": "xsd:string" }
-       }]
-   }]
-}
-"""
-
-
-def get_token():
-    return "AAA"
-
-
-usage_decision = ODRE().set_debug(True).enforce(policy, interpolations={'token': 'AAA', 'retrieve_token': get_token})
-print(usage_decision)
