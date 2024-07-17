@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime, timezone
+import requests
 
 # Casters
 
@@ -43,6 +44,15 @@ def odrl_gteq(operand1, operand2):
 def odrl_neq(operand1, operand2):
     return operand1 != operand2
 
+def odrl_neg(operand1, operand2):
+    return operand1 != operand2
+
+def time_between(operand1, operand2):
+    if operand1 <= operand2:
+        return operand1 <= datetime.now() <= operand2
+    else:
+        return datetime.now() >= operand1 or datetime.now() <= operand2
+
 # Functions
 
 def odrl_dateTime():
@@ -54,6 +64,14 @@ def odrl_dateTime():
 def odrl_distribute():
     print("on distribution")
     return "distribution action was executed"
+
+def odrl_read():
+    print("on read")
+    return "read action was executed"
+
+def demo_dummyRead():
+    response = requests.get("https://catfact.ninja/fact")
+    return response.json()
 
 
 # Time extension
