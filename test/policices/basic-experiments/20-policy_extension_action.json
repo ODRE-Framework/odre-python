@@ -1,0 +1,14 @@
+{
+    "@context": ["http://www.w3.org/ns/odrl.jsonld",{"odem":"https://w3id.org/def/odre-demo#"}],
+    "@type": "Policy",
+    "uid": "https://upm.es/policy/20",
+    "permission": [{
+       "target": "https://jsonplaceholder.typicode.com/users/1",
+       "action": "odem:dummy_read",
+       "constraint": [{
+           "leftOperand": { "@value": "23:55:00", "@type": "xsd:date" },
+           "operator": "eq",
+           "rightOperand":  { "@value": "23:55:00", "@type": "xsd:date" }
+       }]
+   }]
+}

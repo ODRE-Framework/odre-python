@@ -2,12 +2,15 @@ from rdflib import Graph
 from pyodre.python_interpreter import PythonInterpreter
 from pyodre.interpreters import Interpreter
 from jinja2 import Template
+import logging
 
+logger = logging.getLogger(__name__)
 
 
 class ODRE:
     def __init__(self, debug=False):
-        self.__debug = debug
+        if debug:
+            logger.setLevel(logging.DEBUG)
         self.__interpreter = PythonInterpreter()
 
     def set_interpreter(self, interpreter):
@@ -53,13 +56,11 @@ class ODRE:
 
     def enforce(self, policy, format='json-ld', interpolations={}):
         templated_policy = Template(policy)
-        if self.__debug:
-            print(interpolations)
+        logging.debug("Provided interpolations: ", interpolations)
         for templated_name, value in interpolations.items():
             templated_policy.globals[templated_name] = value
         interpolated_policy = templated_policy.render()
-        if self.__debug:
-            print("Interpolated policy: ", interpolated_policy)
+        logging.debug("Interpolated policy: ", interpolated_policy)
         # TODO: solve template and interpolation
         descriptive_policy = Graph().parse(data=interpolated_policy, format=format)
         usage_decision = {}
@@ -67,19 +68,16 @@ class ODRE:
             constraints_set = self._constraints(rule_id, descriptive_policy)
             interpretable_policy = self.__interpreter.transform(constraints_set)
             decision = self.__interpreter.evaluate(interpretable_policy)
-            if self.__debug:
-                print("Interpretable policy:", interpretable_policy, " decision: ", decision)
+            logging.debug("Interpretable policy:", interpretable_policy, " decision: ", decision)
             if decision:
                 descriptive_action = self._action(rule_id, descriptive_policy)
                 interpretable_action = self.__interpreter.supports(descriptive_action)
                 action_result = interpretable_action
-                if self.__debug:
-                    print("Action: ", descriptive_action, " supported: ", interpretable_action)
+                logging.debug("Action: ", descriptive_action, " supported: ", interpretable_action)
                 if interpretable_action:
                     action_result = self.__interpreter.evaluate(interpretable_action)
                 usage_decision[descriptive_action] = action_result
-        if self.__debug:
-            print("Usage decisions: ", usage_decision)
+        logging.debug("Usage decisions: ", usage_decision)
         return usage_decision
 
 

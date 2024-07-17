@@ -10,7 +10,8 @@ class PythonInterpreter(Interpreter):
         self.__prefixes_mappings = {"odrl_": "http://www.w3.org/ns/odrl/2/",
                                     "cast_": "http://www.w3.org/2001/XMLSchema#",
                                     "time_": "https://w3id.org/def/odre-time#",
-                                    "demo_": "https://w3id.org/def/odre-demo#"  }
+                                    "demo_": "https://w3id.org/def/odre-demo#"
+                                    }
 
     def get_prefixes_mappings(self):
         return self.__prefixes_mappings

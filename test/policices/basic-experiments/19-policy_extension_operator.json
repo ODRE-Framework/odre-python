@@ -1,0 +1,14 @@
+{
+    "@context": ["http://www.w3.org/ns/odrl.jsonld",{"otime":"https://w3id.org/def/odre-time#"}],
+    "@type": "Policy",
+    "uid": "https://upm.es/policy/19",
+    "permission": [{
+       "target": "https://jsonplaceholder.typicode.com/users/1",
+       "action": "read",
+       "constraint": [{
+           "leftOperand": { "@value": "06:55:00", "@type": "xsd:date" },
+           "operator": "otime:between",
+           "rightOperand":  { "@value": "23:55:00", "@type": "xsd:date" }
+       }]
+   }]
+}

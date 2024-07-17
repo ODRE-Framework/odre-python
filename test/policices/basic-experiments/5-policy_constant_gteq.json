@@ -1,0 +1,14 @@
+{
+    "@context": "http://www.w3.org/ns/odrl.jsonld",
+    "@type": "Policy",
+    "uid": "https://upm.es/policy/5",
+    "permission": [{
+       "target": "https://jsonplaceholder.typicode.com/users/1",
+       "action": "read",
+       "constraint": [{
+           "leftOperand": { "@value": "2024-01-01", "@type": "xsd:date" },
+           "operator": "gteq",
+           "rightOperand":  { "@value": "2025-01-01", "@type": "xsd:date" }
+       }]
+   }]
+}
