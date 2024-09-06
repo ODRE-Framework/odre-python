@@ -9,8 +9,8 @@ def cast_date(node):
 def cast_time(node):
     return datetime.strptime(node, "%H:%M:%S")
 
-def cast_datetime(node):
-    return datetime.strptime(node, "%Y-%m-%dT%H-%M-%S")
+def cast_dateTime(node):
+    return datetime.strptime(node, "%Y-%m-%d %H:%M:%S")
 
 def cast_string(node):
     return str(node)

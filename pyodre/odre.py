@@ -3,6 +3,7 @@ from pyodre.python_interpreter import PythonInterpreter
 from pyodre.interpreters import Interpreter
 from jinja2 import Template
 import logging
+from pyodre.context import get_odrl_context
 
 logger = logging.getLogger(__name__)
 
@@ -61,7 +62,9 @@ class ODRE:
             templated_policy.globals[templated_name] = value
         interpolated_policy = templated_policy.render()
         logging.debug("Interpolated policy: ", interpolated_policy)
-        # TODO: solve template and interpolation
+        # TODO: improve odrl context cache
+        interpolated_policy = interpolated_policy.replace("\"http://www.w3.org/ns/odrl.jsonld\"", get_odrl_context())
+        # DONE: solve template and interpolation
         descriptive_policy = Graph().parse(data=interpolated_policy, format=format)
         usage_decision = {}
         for rule_id in self._rules(descriptive_policy):

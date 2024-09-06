@@ -18,7 +18,7 @@ def read_file(dir):
 def enforce(policy, name, interpolations={}):
     global dict, EXPERIMENTAL_MODE
 
-    name = "python_" + name
+    name = "test_" + name
     usage_decision = {}
     if EXPERIMENTAL_MODE:
         for i in range(iterations):
