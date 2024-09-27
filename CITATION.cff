@@ -1,0 +1,62 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Open Digital Rights Enforcement Framework
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Andrea
+    family-names: Cimmino
+    affiliation: Universidad Politécnica de Madrid
+    email: andreajesus.cimmino@upm.es
+    orcid: 'https://orcid.org/0000-0002-1823-4484'
+  - given-names: Juan
+    family-names: Cano-Benito
+    affiliation: Universidad Politécnica de Madrid
+    email: juan.cano@upm.es
+    orcid: 'https://orcid.org/0000-0002-5638-4977'
+  - given-names: Raúl
+    family-names: García-Castro
+    affiliation: Universidad Politécnica de Madrid
+    orcid: 'https://orcid.org/0000-0002-0421-452X'
+    email: r.garcia@upm.es
+identifiers:
+  - type: other
+    value: 'arXiv:2409.17602'
+repository-code: 'https://github.com/ODRE-Framework/odre-python'
+url: 'https://github.com/ODRE-Framework'
+repository: 'https://github.com/ODRE-Framework/odre-java'
+abstract: >
+  From centralised platforms to decentralised ecosystems,
+  like Data Spaces, sharing data has become a paramount
+  challenge. For this reason, the definition of data usage
+  policies has become crucial in these domains, highlighting
+  the necessity of effective policy enforcement mechanisms.
+  The Open Digital Rights Language (ODRL) is a W3C standard
+  ontology designed to describe data usage policies,
+  however, it lacks built-in enforcement capabilities,
+  limiting its practical application. This paper introduces
+  the Open Digital Rights Enforcement (ODRE) framework,
+  whose goal is to provide ODRL with enforcement
+  capabilities. The ODRE framework proposes a novel approach
+  to express ODRL policies that integrates the descriptive
+  ontology terms of ODRL with other languages that allow
+  behaviour specification, such as dynamic data handling or
+  function evaluation. The framework includes an enforcement
+  algorithm for ODRL policies and two open-source
+  implementations in Python and Java. The ODRE framework is
+  also designed to support future extensions of ODRL to
+  specific domain scenarios. In addition, current
+  limitations of ODRE, ODRL, and current challenges are
+  reported. Finally, to demonstrate the enforcement
+  capabilities of the implementations, their performance,
+  and their extensibility features, several experiments have
+  been carried out with positive results.
+keywords:
+  - Open Digital Rights Language
+  - Privacy Policies
+  - ' ODRL Enforcement'
+license: CC-BY-4.0
