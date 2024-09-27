@@ -164,3 +164,17 @@ print(usage_decision)
 ### Extensions
 
 In order to include new operators or operands a user must provide their name space and a function prefix for it. For instance, the new function <http://XXXXX> and its function prefix fnc_. Then, the user must implement the function fnc_XX in the file python functions
+
+### BibTeX Citation
+
+```bibtex
+@misc{cimmino2024opendigitalrightsenforcement,
+      title={Open Digital Rights Enforcement Framework (ODRE): from descriptive to enforceable policies}, 
+      author={Andrea Cimmino and Juan Cano-Benito and Raúl García-Castro},
+      year={2024},
+      eprint={2409.17602},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2409.17602}, 
+}
+```
