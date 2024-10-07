@@ -1,7 +1,6 @@
 # ODRE Framework
 
-
-
+This is a pythom impementation of the ODRE approach to enforce ODRL policices. You can play with this implementation in our [demo](https://colab.research.google.com/drive/1_jXeZ53eL6byYq5hE28Alb5eYqcWMwTw?usp=sharing).
 
 ## Quickstart
 
@@ -46,7 +45,8 @@ print(usage_decision)
 ```
 
 #### Register new functions (descriptive + interpretable)
-TBD
+
+In order to include new operators or operands a user must provide the name space and a function prefix for the terms in the ontology extensions that is been integrated in ODRE. To do this, the user must include this information in the `Interpreter` class; for instance, a new function namespace `prefix fnc: <http://organiation.org/namespace>` and its function prefix fnc_. Then, the user must implement the function fnc_XX in the file python functions considering that XX should meet the term in the ontology, for instance the python function fnc_time will be called if the policy contains the term fnc:time.
 
 ### Interpolation
 
@@ -161,9 +161,7 @@ print(usage_decision)
 | [policyUsage](https://www.w3.org/TR/odrl-vocab/#term-policyUsage) | unsupported  | &cross; |
 
 
-### Extensions
 
-In order to include new operators or operands a user must provide their name space and a function prefix for it. For instance, the new function <http://organiation.org/namespace> and its function prefix fnc_. Then, the user must implement the function fnc_XX in the file python functions.
 
 ### BibTeX Citation
 
