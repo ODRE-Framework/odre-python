@@ -1,5 +1,5 @@
 # ODRE Framework
-
+[![pip](https://maven-badges.herokuapp.com/maven-central/cz.jirutka.rsql/rsql-parser/badge.png?version=0.1.2&style=flat&gav=true)](https://central.sonatype.com/artifact/io.github.odre-framework/odre-core) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 This is a pythom impementation of the ODRE approach to enforce ODRL policices. You can play with this implementation in our [demo](https://colab.research.google.com/drive/1_jXeZ53eL6byYq5hE28Alb5eYqcWMwTw?usp=sharing).
 
 ## Quickstart
