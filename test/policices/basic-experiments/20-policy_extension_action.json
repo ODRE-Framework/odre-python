@@ -4,7 +4,7 @@
     "uid": "https://upm.es/policy/20",
     "permission": [{
        "target": "https://jsonplaceholder.typicode.com/users/1",
-       "action": "odem:dummy_read",
+       "action": "odem:dummyRead",
        "constraint": [{
            "leftOperand": { "@value": "23:55:00", "@type": "xsd:date" },
            "operator": "eq",
