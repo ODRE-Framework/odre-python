@@ -94,7 +94,7 @@ print(usage_decision)
 |--|--| -- |
 | [eq](https://www.w3.org/TR/odrl-vocab/#term-eq) | supported  | &check; |
 | [gt](https://www.w3.org/TR/odrl-vocab/#term-gt)  | supported  | &check; |
-| [gteq](https://www.w3.org/TR/odrl-vocab/#term-gteq) | unsupported  | &check; |
+| [gteq](https://www.w3.org/TR/odrl-vocab/#term-gteq) | supported  | &check; |
 | [lt](https://www.w3.org/TR/odrl-vocab/#term-lt)  | supported  | &check; |
 | [lteq](https://www.w3.org/TR/odrl-vocab/#term-lteq)  | supported  | &check; |
 | [neq](https://www.w3.org/TR/odrl-vocab/#term-neq)  | supported  | &check; |
@@ -115,7 +115,7 @@ print(usage_decision)
 | [absoluteSpatialPosition](https://www.w3.org/TR/odrl-vocab/#term-absoluteSpatialPosition)   | unsupported | &cross; |
 | [absoluteTemporalPosition](https://www.w3.org/TR/odrl-vocab/#term-absoluteTemporalPosition) | unsupported | &cross; |
 | [count](https://www.w3.org/TR/odrl-vocab/#term-count)                                       | unsupported | &cross; |
-| [dateTime](https://www.w3.org/TR/odrl-vocab/#term-dateTime)                                 | unsupported | &cross; |
+| [dateTime](https://www.w3.org/TR/odrl-vocab/#term-dateTime)                                 | supported | &check; |
 | [delayPeriod](https://www.w3.org/TR/odrl-vocab/#term-delayPeriod)                           | unsupported | &cross; |
 | [deliveryChannel](https://www.w3.org/TR/odrl-vocab/#term-deliveryChannel)                   | unsupported | &cross; |
 | [device](https://www.w3.org/TR/odrl-vocab/#term-device)                                     | unsupported | &cross; |
@@ -163,7 +163,7 @@ print(usage_decision)
 
 ### Extensions
 
-In order to include new operators or operands a user must provide their name space and a function prefix for it. For instance, the new function <http://XXXXX> and its function prefix fnc_. Then, the user must implement the function fnc_XX in the file python functions
+In order to include new operators or operands a user must provide their name space and a function prefix for it. For instance, the new function <http://organiation.org/namespace> and its function prefix fnc_. Then, the user must implement the function fnc_XX in the file python functions.
 
 ### BibTeX Citation
 
