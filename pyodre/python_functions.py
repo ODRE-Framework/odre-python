@@ -4,7 +4,7 @@ import requests
 # Casters
 
 def cast_date(node):
-    return datetime.strptime(node, "%Y-%m-%d")
+    return datetime.strptime(node, "%Y-%m-%d").replace(hour=23, minute=59)
 
 def cast_time(node):
     return datetime.strptime(node, "%H:%M:%S")
