@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyodre',
-    version='1.0.4',
+    version='1.0.5',
     packages=find_packages(),  # Encuentra todos los paquetes automáticamente
     install_requires=["rdflib>=7.0.0", "jinja2>=3.1.2", "requests>=2.32.3"],
     author='Andrea Cimmino',
