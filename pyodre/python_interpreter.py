@@ -51,7 +51,7 @@ class PythonInterpreter(Interpreter):
                 break
         if interpretable_node is None:
             raise Exception(
-                "Unknown URI, please provide a prefix mapping for this URI, e.g., '{ \"odrl_\" : "
+                "Unknown URI "+str(value)+". Please provide a prefix mapping to make this URI interpretable, e.g., '{ \"odrl_\" : "
                 "\"http://www.w3.org/ns/odrl/2/\" }'")
         return interpretable_node
 

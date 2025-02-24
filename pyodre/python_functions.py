@@ -27,9 +27,6 @@ def cast_integer(node):
 # Operands
 
 def odrl_eq(operand1, operand2):
-    print(operand1)
-    print(operand2)
-    print("-------")
     return operand1 == operand2
 
 def odrl_lt(operand1, operand2):

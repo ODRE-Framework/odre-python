@@ -69,9 +69,13 @@ class ODRE:
         usage_decision = {}
         for rule_id in self._rules(descriptive_policy):
             constraints_set = self._constraints(rule_id, descriptive_policy)
-            interpretable_policy = self.__interpreter.transform(constraints_set)
-            decision = self.__interpreter.evaluate(interpretable_policy)
-            logging.debug("Interpretable policy:", interpretable_policy, " decision: ", decision)
+            # if constraints_set is empty it means no constraints must be satisfied
+            decision = len(constraints_set) == 0
+            # If not, transform policy constraints into evaluable expressions
+            if not decision:
+                interpretable_policy = self.__interpreter.transform(constraints_set)
+                decision = self.__interpreter.evaluate(interpretable_policy)
+                logging.debug("Interpretable policy:", interpretable_policy, " decision: ", decision)
             if decision:
                 descriptive_action = self._action(rule_id, descriptive_policy)
                 interpretable_action = self.__interpreter.supports(descriptive_action)
@@ -82,5 +86,3 @@ class ODRE:
                 usage_decision[descriptive_action] = action_result
         logging.debug("Usage decisions: ", usage_decision)
         return usage_decision
-
-
