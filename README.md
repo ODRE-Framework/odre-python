@@ -168,13 +168,17 @@ print(usage_decision)
 ### BibTeX Citation
 
 ```bibtex
-@misc{cimmino2024opendigitalrightsenforcement,
-      title={Open Digital Rights Enforcement Framework (ODRE): from descriptive to enforceable policies}, 
-      author={Andrea Cimmino and Juan Cano-Benito and Raúl García-Castro},
-      year={2024},
-      eprint={2409.17602},
-      archivePrefix={arXiv},
-      primaryClass={cs.CR},
-      url={https://arxiv.org/abs/2409.17602}, 
+@article{CIMMINO2025104282,
+title = {Open Digital Rights Enforcement framework (ODRE): From descriptive to enforceable policies},
+journal = {Computers & Security},
+volume = {150},
+pages = {104282},
+year = {2025},
+issn = {0167-4048},
+doi = {https://doi.org/10.1016/j.cose.2024.104282},
+url = {https://www.sciencedirect.com/science/article/pii/S0167404824005881},
+author = {Andrea Cimmino and Juan Cano-Benito and Raúl García-Castro},
+keywords = {Open digital rights language, Privacy policies, ODRL enforcement},
+abstract = {From centralised platforms to decentralised ecosystems, like Data Spaces, sharing data has become a paramount challenge. For this reason, the definition of data usage policies has become crucial in these domains, highlighting the necessity of effective policy enforcement mechanisms. The Open Digital Rights Language (ODRL) is a W3C standard ontology designed to describe data usage policies, however, it lacks built-in enforcement capabilities, limiting its practical application. This paper introduces the Open Digital Rights Enforcement (ODRE) framework, whose goal is to provide ODRL with enforcement capabilities. The ODRE framework proposes a novel approach to express ODRL policies that integrates the descriptive ontology terms of ODRL with other languages that allow behaviour specification, such as dynamic data handling or function evaluation. The framework includes an enforcement algorithm for ODRL policies and two open-source implementations in Python and Java. The ODRE framework is also designed to support future extensions of ODRL to specific domain scenarios. In addition, current limitations of ODRE, ODRL, and current challenges are reported. Finally, to demonstrate the enforcement capabilities of the implementations, their performance, and their extensibility features, several experiments have been carried out with positive results.}
 }
 ```
