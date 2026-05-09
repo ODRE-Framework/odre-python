@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
-This is a pythom impementation of the ODRE approach to enforce ODRL policices. You can play with this implementation in our [demo](https://colab.research.google.com/drive/1_nqAaYSOkDqe42ioJGupkFC5NBfZn3d3?usp=sharing).
+This is a pythom impementation of the ODRE approach to enforce ODRL policices. You can play with this implementation in our [demo](https://colab.research.google.com/drive/1_nqAaYSOkDqe42ioJGupkFC5NBfZn3d3?usp=sharing). Advanced usage can be explored in the [notebook](https://colab.research.google.com/drive/10XHbTmSKtOJlYmg3f94vZDyIR8Txvvi5?usp=sharing) presented during the `ESWC 2026 Tutorial: Policy Evaluation and Enforcement on the Web with ODRL` 
 
 ## Quickstart
 
